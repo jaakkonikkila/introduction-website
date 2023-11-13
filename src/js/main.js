@@ -53,4 +53,24 @@ document.addEventListener('DOMContentLoaded', function () {
   
       menu.scrollLeft = scrollLeft - moveX;
     });
+
+    // Handle touch events
+    menu.addEventListener("touchstart", function (e) {
+        isScrolling = true;
+        startX = e.touches[0].pageX - menu.offsetLeft;
+        scrollLeft = menu.scrollLeft;
+    });
+    
+    menu.addEventListener("touchend", function () {
+        isScrolling = false;
+    });
+    
+    menu.addEventListener("touchmove", function (e) {
+        if (!isScrolling) return;
+        e.preventDefault();
+    
+        const x = e.touches[0].pageX - menu.offsetLeft;
+        const moveX = (x - startX) * 2; // Adjust the sensitivity
+        menu.scrollLeft = scrollLeft - moveX;
+    });
 });

@@ -26,8 +26,7 @@ html {
   }
   
   #main-container .welcome-container, #main-container .work-experience-container,
-  #main-container .links-container, #main-container .about-container,
-  #main-container .courses-container{
+  #main-container .about-container, #main-container .courses-container{
     display: flex;
     flex-direction: column; /* Added to stack items vertically */
     align-items: center;
@@ -37,7 +36,25 @@ html {
     top: 50%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Centering trick */
-    box-shadow: 0 0 4rem rgba(0 0 0 35%);
+  }
+
+  #main-container .links-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 10%; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+  }
+
+  #main-container .links-container img{
+    min-width: 140px;
+    max-width: 20%;
+  }
+
+  #main-container .links-container img[alt="LinkedIn"]{
+    padding-left: 15px;
   }
 
   body[data-nav="true"] > main {
@@ -168,3 +185,67 @@ html {
     font-family: Rubik, sans-serif;
     transition: color 600ms;
   }
+
+  /* Media Queries for Mobile */
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  main {
+    padding: 0; /* Add padding to content for better readability */
+  }
+
+  nav {
+    height: 30vh; /* Adjust the height for smaller screens */
+    padding: 0;
+    bottom: 30px;
+  }
+
+  #nav-links {
+    margin: 0; /* Remove any potential margin */
+  }
+
+  #nav-links > .nav-link > .nav-link-image {
+    width: max(20vw, 300px);
+    aspect-ratio: 2 / 1;
+    margin-top: 0.25rem;
+    object-fit: cover;
+  }
+
+  #main-container .welcome-container, #main-container .work-experience-container,
+  #main-container .about-container, #main-container .courses-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    transform: translate(0, 0); 
+  }
+
+  #main-container .links-container {
+    display: flex;
+    text-align: center;
+  }
+
+  #main-container .links-container img{
+    min-width: 90px;
+    max-width: 50%;
+  }
+
+  #main-container .links-container img[alt="LinkedIn"]{
+    padding-left: 10px;
+  }
+
+  #nav-toggle {
+    bottom: 1rem;
+  }
+
+  .meta-link {
+    left: 2px;
+  }
+}
