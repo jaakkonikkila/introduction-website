@@ -1,0 +1,17 @@
+{
+  "name": "introduction-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:styles": "stylelint src/css/*.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.53.0",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}
