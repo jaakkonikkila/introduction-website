@@ -8,6 +8,8 @@ function loadComponent(componentUrl, containerId) {
             return response.text();
         })
         .then(htmlContent => {
+            // Reset the container
+            document.getElementById("main-container").innerHTML = "";
             document.getElementById(containerId).innerHTML = htmlContent;
         })
         .catch(error => {
@@ -21,6 +23,34 @@ const toggleNav = () => {
 
 // Load header and footer components
 document.addEventListener('DOMContentLoaded', function () {
+    // Load curtain menu
     loadComponent('components/curtain_menu.html', 'curtain-menu');
-    loadComponent('components/welcome.html', 'homepage');
+    // Load homepage at startup
+    loadComponent('components/welcome.html', 'main-container');
+
+    // Get curtain-menu container to add eventlistener for scrolling by dragging
+    const menu = document.getElementById("curtain-menu");
+    let isScrolling = false;
+    let startX, scrollLeft;
+  
+    menu.addEventListener("mousedown", function (e) {
+      isScrolling = true;
+      startX = e.pageX - menu.offsetLeft;
+      scrollLeft = menu.scrollLeft;
+    });
+  
+    menu.addEventListener("mouseup", function () {
+      isScrolling = false;
+    });
+  
+    menu.addEventListener("mousemove", function (e) {
+      if (!isScrolling) return;
+      e.preventDefault();
+  
+      const x = e.pageX - menu.offsetLeft;
+  
+      const moveX = (x - startX) * 1; // Adjust the sensitivity
+  
+      menu.scrollLeft = scrollLeft - moveX;
+    });
 });

@@ -21,17 +21,25 @@ html {
     width: 100vw;
     position: relative;
     z-index: 2;
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+    color:white;
+  }
+  
+  #main-container .welcome-container, #main-container .work-experience-container,
+  #main-container .links-container, #main-container .about-container,
+  #main-container .courses-container{
     display: flex;
+    flex-direction: column; /* Added to stack items vertically */
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Centering trick */
+    box-shadow: 0 0 4rem rgba(0 0 0 35%);
   }
-  
-  .welcome-container {
-    color: white;
-  }
-  
+
   body[data-nav="true"] > main {
     transform: translateY(-50%);
   }
