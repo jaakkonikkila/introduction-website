@@ -1,15 +1,16 @@
 html {
     overflow: hidden;
-}
-body {
+  }
+  
+  body {
     height: 100vh;
     width: 100vw;
-    margin: 0px;
+    margin: 0;
     background-color: black;
   }
   
   .rubik-font {
-    font-family: "Rubik", sans-serif;
+    font-family: Rubik, sans-serif;
   }
   
   main {
@@ -24,12 +25,13 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 500ms cubic-bezier(.13,.53,.38,.97);
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
   }
+  
   .welcome-container {
     color: white;
-}
-
+  }
+  
   body[data-nav="true"] > main {
     transform: translateY(-50%);
   }
@@ -38,19 +40,19 @@ body {
     height: 50vh;
     width: 100%;
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     z-index: 1;
     overflow: hidden;
   }
   
-  #nav-links {  
+  #nav-links {
     display: flex;
     gap: clamp(1rem, 2vw, 2rem);
     margin-top: clamp(2rem, 2vw, 3rem);
-    padding: 0rem clamp(1rem, 2vw, 2rem);
+    padding: 0 clamp(1rem, 2vw, 2rem);
     transform: translateY(70%) scale(0.9);
-    transition: transform 500ms cubic-bezier(.13,.53,.38,.97); 
+    transition: transform 500ms cubic-bezier(0.13, 0.53, 0.38, 0.97);
   }
   
   body[data-nav="true"] > nav > #nav-links {
@@ -64,7 +66,7 @@ body {
   #nav-links > .nav-link > .nav-link-label {
     color: white;
     font-size: 1.25rem;
-    margin: 0rem;
+    margin: 0;
     text-transform: uppercase;
   }
   
@@ -84,15 +86,13 @@ body {
     left: 50%;
     bottom: 3rem;
     transform: translateX(-50%);
-    background-color: rgb(182, 142, 113);
+    background-color: rgb(182 142 113);
     border: none;
     border-radius: 5rem;
     outline: none;
-    box-shadow: 0rem 0rem 4rem rgba(0 0 0 / 35%);
+    box-shadow: 0 0 4rem rgba(0 0 0 35%); 
     cursor: pointer;
-    transition: transform, background-color;
-    transition-timing-function: ease;
-    transition-duration: 400ms;
+    transition: transform, background-color 400ms ease;
   }
   
   #nav-toggle:hover {
@@ -104,7 +104,7 @@ body {
   }
   
   body[data-nav="true"] > #nav-toggle {
-    background-color: rgb(85, 130, 149);
+    background-color: rgb(85 130 149);
   }
   
   body:not([data-nav="true"]) > #nav-toggle:hover > .open {
@@ -117,12 +117,10 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    color: rgb(246, 231, 224);
+    color: rgb(246 231 224);
     font-size: 1.75rem;
     opacity: 0;
-    transition: transform, opacity;
-    transition-timing-function: ease;
-    transition-duration: 400ms;
+    transition: transform, opacity 400ms ease;
   }
   
   body[data-nav="true"] > #nav-toggle > .close {
@@ -133,10 +131,10 @@ body {
   .meta-link {
     align-items: center;
     backdrop-filter: blur(3px);
-    background-color: rgba(40, 40, 40, 0.9);
+    background-color: rgba(40 40 40 90%);
     border-radius: 6px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-    cursor: pointer;  
+    box-shadow: 2px 2px 2px rgba(0 0 0 10%); 
+    cursor: pointer;
     display: inline-flex;
     gap: 5px;
     left: 10px;
@@ -148,16 +146,17 @@ body {
   }
   
   .meta-link:hover {
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(40 40 40);
   }
   
-  .meta-link > i, .meta-link > span {
+  .meta-link > i,
+  .meta-link > span {
     height: 20px;
     line-height: 20px;
   }
   
   .meta-link > span {
     color: white;
-    font-family: "Rubik", sans-serif;
+    font-family: Rubik, sans-serif;
     transition: color 600ms;
   }
