@@ -1,6 +1,7 @@
 # Introduction-website
+Static website built with HTML, CSS and JavaScript
 
-Showcase website to introduce myself.
+"Portfolio" website to introduce myself.
 
 ## Getting Started
 
@@ -34,7 +35,7 @@ npm run dev
 The application will be accessible at http://localhost:3000.
 
 ### Built With
-Static website built with HTML, CSS and JavaScript
+Node
 
 Express - Web framework for Node.js
 
