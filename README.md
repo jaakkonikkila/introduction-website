@@ -1,6 +1,8 @@
 # Introduction-website
 Static website built with HTML, CSS and JavaScript
 
+Page is hosted on GitHub Pages https://jaakkonikkila.github.io/introduction-website/
+
 "Portfolio" website to introduce myself.
 
 ## Getting Started
